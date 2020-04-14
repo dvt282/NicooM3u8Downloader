@@ -48,9 +48,9 @@ class NicooTsDownloader: NSObject {
             
             delegate?.tsDownloadSucceeded(with: self)
         } else {
-            let url = downloadURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+           // let url = downloadURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             
-            guard let taskURL = URL(string: url) else { return }
+            guard let taskURL = URL(string: downloadURL) else { return }
             
             downloadTask = downloadSession.downloadTask(with: taskURL)
             downloadTask?.resume()
